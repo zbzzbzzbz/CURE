@@ -1,0 +1,23 @@
+modelname: blip-large-CEL
+basemodel: blip
+_target_: src.model.blip.blip_cir_CEL.blip_cir
+
+ckpt_path: ${model.ckpt.path}
+
+model:
+  _target_: src.model.blip.blip_cir_CEL.BLIPCir
+  med_config: ${paths.work_dir}/configs/med_config.json
+  image_size: ${model.ckpt.image_size}
+  vit: "large"
+  vit_grad_ckpt: True
+  vit_ckpt_layer: 12
+  embed_dim: 256
+  train_vit: False
+  loss: ${model.loss}
+
+  tar_mm_loss_weight: 0.4
+  CEL_loss_weight: 0.2
+  le_loss_weight: 1.0
+  lkl_loss_weight: 0.01
+  lral_loss_weight: 1.0
+

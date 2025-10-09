@@ -1,0 +1,39 @@
+hydra:
+  run:
+    dir: outputs/${data.dataname}/${model.modelname}/${model.ckpt.name}/${experiment}/${run_name}
+  job: # automatically go to the job folder (needed for hydra > 1.2 with new behavior)
+    chdir: true
+
+# Global configurations shared between different modules
+experiment: tv-${model.model.train_vit}_loss-${model.model.loss.name}_lr-${model.optimizer.lr}
+run_name: CURE_noise${data.noise_ratio}
+
+seed: 1234
+logger_level: INFO
+
+# Composing nested config with default
+defaults:
+  - _self_
+  - data: webvid-covr_CEL
+  - machine: server
+  - trainer: gpu
+  - test: webvid-covr_CEL
+  - trainer/logger: csv
+  - model: blip-large-CEL
+  - model/optimizer: adamw
+  - model/scheduler: cosine
+  - model/loss: tal
+  - model/ckpt: blip-l-coco
+  - model/loss_terms: si_ti
+
+  - experiment: null
+  - experiment2: null
+
+paths: ${machine.paths}
+
+# Flag to validate at the end of every epoch
+val: True
+evaluate:
+  _target_: src.test.${model.basemodel}.utils.evaluate
+
+warmup_epochs: 1

@@ -1,0 +1,5 @@
+name: webvid-covr
+
+path: ${paths.work_dir}/pretrained_model/cure_webvid_noise60.ckpt
+
+image_size: 384
