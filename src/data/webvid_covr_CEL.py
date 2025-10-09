@@ -330,7 +330,7 @@ class WebVidCoVRDataset(Dataset):
         if self.split == 'train' and self.noise_ratio > 0:
             self.shuffle()
         else:
-            print(f"不添加noise !!\n")
+            print(f"all clean !!\n")
 
     def shuffle(self):
         print(f'shuffle data with noise ratio {self.noise_ratio}')

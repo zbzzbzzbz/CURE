@@ -50,10 +50,11 @@ The code was tested on Python 3.10 and PyTorch 2.4.
 ### WebVid-CoVR
 To use the WebVid-CoVR dataset, you will have to download the WebVid videos and merge annotation.
 
-to merge the annotation
+To merge the annotation
 ```bash
-cat annotation/webvid-covr2m/all_csvs.zip.* > annotation/webvid-covr2m/all_csvs.zip
-unzip annotation/webvid-covr2m/all_csvs.zip
+cd annotation/webvid-covr2m/
+cat all_csvs.zip.* > all_csvs.zip
+unzip all_csvs.zip
 ```
 
 To download the videos, install [`mpi4py`](https://mpi4py.readthedocs.io/en/latest/install.html#) (``conda install -c conda-forge mpi4py``) and run:

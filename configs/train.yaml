@@ -14,17 +14,16 @@ logger_level: INFO
 # Composing nested config with default
 defaults:
   - _self_
-  - data: webvid-covr_CEL
+  - data: webvid-covr
   - machine: server
   - trainer: gpu
-  - test: webvid-covr_CEL
+  - test: webvid-covr
   - trainer/logger: csv
-  - model: blip-large-CEL
+  - model: blip-large
   - model/optimizer: adamw
   - model/scheduler: cosine
   - model/loss: tal
   - model/ckpt: blip-l-coco
-  - model/loss_terms: si_ti
 
   - experiment: null
   - experiment2: null
