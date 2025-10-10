@@ -139,7 +139,6 @@ def train(model, train_loader, optimizer, fabric, epoch, cfg, uncertainty, preds
         fabric.backward(loss)
         optimizer.step()
 
-        # print_interval 为 10
         if batch_idx % cfg.trainer.print_interval == 0:
             # fabric.print(f"batch['ref_img_feat'].device : {batch['ref_img_feat'].device}")
             fabric.print(
