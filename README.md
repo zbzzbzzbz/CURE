@@ -5,7 +5,7 @@
 </div>
 
 ## Description
-This repository contains the code for the paper ["Deep Cross-modal Evidential Learning for Composed Noisy Video Retrieval"]
+This is the source code of our WWW 2026 paper ["Deep Cross-modal Evidential Learning for Composed Noisy Video Retrieval"]
 
 This repository contains: 
 
