@@ -1,11 +1,11 @@
 <div align="center">
 
-# Deep Cross-modal Evidential Learning for Composed Noisy Video Retrieval
+# Evidential Matching, Uncertainty Calibration: Towards Robust Composed Video Retrieval with Noisy Triplets
 
 </div>
 
 ## Description
-This is the source code of our WWW 2026 paper ["Deep Cross-modal Evidential Learning for Composed Noisy Video Retrieval"]
+This is the source code of our WWW 2026 paper ["Evidential Matching, Uncertainty Calibration: Towards Robust Composed Video Retrieval with Noisy Triplets"]
 
 This repository contains: 
 
